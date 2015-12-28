@@ -444,7 +444,7 @@ static char UIScrollViewPullToRefreshView;
     
     if(!self.wasTriggeredByUser && self.scrollView.contentOffset.y < -self.originalTopInset) {
         CGPoint point = CGPointMake(self.scrollView.contentOffset.x, -self.originalTopInset);
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self.scrollView setContentOffset:point animated:YES];
         });
     }
